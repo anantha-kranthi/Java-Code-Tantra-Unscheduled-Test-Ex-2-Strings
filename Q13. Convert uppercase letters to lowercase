@@ -1,0 +1,22 @@
+/*Q13. Write a Java program that interacts with the user by prompting them to enter a string composed of different characters. The program should
+then convert each uppercase letter in the entered string to its lowercase counterpart and display the modified string.
+Input format:
+• The first line contains a string consisting of alphabets, digits, and special characters.
+Output format:
+• Print the string after converting all uppercase letters to lowercase letters.
+*/
+import java.util.Scanner;
+ 
+public class ToLower {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (c >= 'A' && c <= 'Z') sb.append((char) (c + 32));
+            else sb.append(c);
+        }
+        System.out.println(sb);
+        sc.close();
+    }
+}
