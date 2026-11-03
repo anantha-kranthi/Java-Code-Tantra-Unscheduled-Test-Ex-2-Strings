@@ -1,0 +1,26 @@
+/*Q2. Write a program to find the longest word in the given sentence. If two or more words have the same length, print the word that appears first.
+Input Format:
+• A single line containing a string representing the sentence.
+Output Format:
+• Print the longest word in the sentence.
+Constraints:
+• The sentence will contain at least one word.
+• Words in the sentence are separated by one space
+*/
+import java.util.Scanner;
+ 
+public class LongestWord {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String sentence = sc.nextLine().trim();
+        String[] words = sentence.split("\\s+");
+        String longest = words[0];
+        for (String w : words) {
+            if (w.length() > longest.length()) {   // '>' keeps the first longest word
+                longest = w;
+            }
+        }
+        System.out.println(longest);
+        sc.close();
+    }
+}
