@@ -1,0 +1,42 @@
+/*Q29. Write a Java program that displays the number of characters, lines, and words in a text. Your program should read the input until it
+encounters the character -1 in a new line.
+Input Format:
+• The input consists of multiple lines of text.
+• Each line is read as a complete string.
+• Input continues until the user enters -1 on a separate line.
+Output Format:
+• The first output line contains a positive integer representing the number of characters in that text.
+• The second output line contains a positive integer representing the number of lines in that text.
+• The third output line contains a positive integer representing the number of words in that text.
+Input example:
+a
+il
+Output example:
+2
+1
+I
+Note:
+• The count of characters includes all visible characters as well as the newline characters (\n) at the end of each line (except for the
+terminating -1 line).
+
+*/
+import java.util.Scanner;
+ 
+public class TextStats {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int chars = 0, lines = 0, words = 0;
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            if (line.equals("-1")) break;
+            lines++;
+            chars += line.length() + 1;            // +1 for the newline character
+            String t = line.trim();
+            if (!t.isEmpty()) words += t.split("\\s+").length;
+        }
+        System.out.println(chars);
+        System.out.println(lines);
+        System.out.println(words);
+        sc.close();
+    }
+}
