@@ -1,0 +1,27 @@
+/*Q9. Write a Java program that reads a line of comma-separated integers using StringTokenizer. The program should display each integer and
+calculate the sum of all the integers.
+Input Format:
+• The input consists of a single line containing integers separated by commas.
+Output Format:
+• Print each integer on a new line.
+• Finally, print the sum of all the integers in the following format:
+Sum: <sum>
+*/
+import java.util.Scanner;
+import java.util.StringTokenizer;
+ 
+public class TokenizerSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String line = sc.nextLine();
+        StringTokenizer st = new StringTokenizer(line, ",");
+        int sum = 0;
+        while (st.hasMoreTokens()) {
+            int n = Integer.parseInt(st.nextToken().trim());
+            System.out.println(n);
+            sum += n;
+        }
+        System.out.println("Sum: " + sum);
+        sc.close();
+    }
+}
