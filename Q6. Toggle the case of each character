@@ -1,0 +1,23 @@
+/*Q6. Write a program to toggle the case of each character in the given string. Every uppercase letter must be converted to lowercase and every
+lowercase letter must be converted to uppercase. Non-alphabetic characters remain unchanged.
+Input Format:
+• A single line containing a string. The string may contain alphabets, digits, and special characters.
+Output Format:
+• Print the string after toggling the case of each character.
+*/
+import java.util.Scanner;
+ 
+public class ToggleCase {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (Character.isUpperCase(c)) sb.append(Character.toLowerCase(c));
+            else if (Character.isLowerCase(c)) sb.append(Character.toUpperCase(c));
+            else sb.append(c);
+        }
+        System.out.println(sb);
+        sc.close();
+    }
+}
