@@ -1,0 +1,28 @@
+/*Q15. Rohan wants to send an encrypted message to his friend. To make it fun and secure, he decided to use a simple encryption algorithm.
+The encryption rule is as follows:
+• The Ist character of the string is repeated once,
+• The 2nd character is repeated twice,
+• The 3rd character is repeated three times,... and so on.
+Your task is to write a Java program that applies this encryption algorithm to a given string and displays the encrypted message.
+Input Format:
+• A single line of input containing a string.
+Output Format:
+• A single string where each character is repeated based on its position in the original string.
+
+*/
+import java.util.Scanner;
+ 
+public class Encrypt {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j <= i; j++) {
+                sb.append(s.charAt(i));
+            }
+        }
+        System.out.println(sb);
+        sc.close();
+    }
+}
