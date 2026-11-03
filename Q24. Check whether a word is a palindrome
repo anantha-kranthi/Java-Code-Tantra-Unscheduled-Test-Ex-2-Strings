@@ -1,0 +1,23 @@
+/*Q24. Imagine you are fascinated by the world of words and have decided to explore the concept of palindromes. Your goal is to create a Java
+program that analyzes a given word and checks whether it is a palindrome or not.
+A word is considered a palindrome if it reads the same backward as forward.
+Input Format:
+• The input line reads a string.
+Output Format:
+• The output will be "<word> is a palindrome" if the given word is a palindrome. Otherwise, "<word> is not a palindrome".
+*/
+import java.util.Scanner;
+ 
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        String rev = new StringBuilder(word).reverse().toString();
+        if (word.equalsIgnoreCase(rev)) {
+            System.out.println(word + " is a palindrome");
+        } else {
+            System.out.println(word + " is not a palindrome");
+        }
+        sc.close();
+    }
+}
