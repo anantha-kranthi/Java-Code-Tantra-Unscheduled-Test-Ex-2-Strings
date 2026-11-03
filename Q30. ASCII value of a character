@@ -1,0 +1,17 @@
+/*Q30. Write a Java program that prompts the user for a character, converts it to its ASCII value, and displays the result.
+Input Format:
+• The input is the character (alphabet/ digit/ special character).
+Output Format:
+• The output is the integer that represents the ASCII value.
+*/
+import java.util.Scanner;
+ 
+public class AsciiValue {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char ch = sc.nextLine().charAt(0);
+        int ascii = (int) ch;
+        System.out.println(ascii);
+        sc.close();
+    }
+}
