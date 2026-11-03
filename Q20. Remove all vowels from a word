@@ -1,0 +1,19 @@
+/*Q20. Alex has a word and has given it to his friend Allen. Alex asks Allen to return the same word after removing all the vowels. Help Allen by
+writing a Java program that removes all vowels (a, e, i, 0, u in both uppercase and lowercase) from the given word and displays the
+resulting string.
+
+Input Format:
+• A single line reads the input string.
+Output Format:
+• The output displays the input string after removing all vowels.
+*/
+import java.util.Scanner;
+ 
+public class RemoveVowels {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(s.replaceAll("[aeiouAEIOU]", ""));
+        sc.close();
+    }
+}
