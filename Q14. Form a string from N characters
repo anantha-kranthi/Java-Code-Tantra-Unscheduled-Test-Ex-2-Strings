@@ -1,0 +1,22 @@
+/*Q14. Write a Java program to form a string with the provided characters and display the resulting string.
+Input Format:
+• The first line contains an integer N, which represents the number of characters to be entered.
+• The next N lines contain the characters.
+Output Format:
+• The output is the string formed by combining the entered characters.
+*/
+import java.util.Scanner;
+ 
+public class FormString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine().trim());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            String line = sc.nextLine();
+            sb.append(line.isEmpty() ? ' ' : line.charAt(0));
+        }
+        System.out.println(sb);
+        sc.close();
+    }
+}
