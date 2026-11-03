@@ -1,0 +1,18 @@
+/*Q16. Write a Java program that takes a string as input and outputs the reverse of that string.
+Input Format:
+• A single line of input contains a string. The string may contain alphabets, digits, and special characters.
+Output Format:
+• The first line displays the original string
+• The second line displays the reversed string
+*/
+import java.util.Scanner;
+ 
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(s);
+        System.out.println(new StringBuilder(s).reverse());
+        sc.close();
+    }
+}
