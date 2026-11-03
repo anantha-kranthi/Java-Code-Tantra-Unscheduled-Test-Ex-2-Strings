@@ -1,0 +1,27 @@
+/*Q18. Write a Java program that takes a string from the user and performs the following tasks:
+• If the length of the string is odd, eliminate the last character.
+• Divide the string into two halves.
+• Reverse the first half and the second half separately.
+• Combine the reversed halves into a single string.
+Input Format:
+• The input is a string.
+Output Format:
+• The output is a string after performing the required operation.
+
+*/
+import java.util.Scanner;
+ 
+public class ReverseHalves {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        if (s.length() % 2 != 0) {
+            s = s.substring(0, s.length() - 1);   // drop the last character
+        }
+        int mid = s.length() / 2;
+        String first = new StringBuilder(s.substring(0, mid)).reverse().toString();
+        String second = new StringBuilder(s.substring(mid)).reverse().toString();
+        System.out.println(first + second);
+        sc.close();
+    }
+}
