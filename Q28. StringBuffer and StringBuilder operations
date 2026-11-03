@@ -1,0 +1,31 @@
+/*Q28. Write a Java program to demonstrate mutable string operations using both StringBuffer and StringBuilder.
+The program should:
+• Read a string from the user.
+• Read the second string, which will be appended to the first.
+• Create a StringBuffer object and append the second string to the first string. Print the result.
+• Create a StringBuilder object using the updated string and reverse it. Print the result.
+Input Format:
+• The first line contains a string.
+• The second line contains another string to be appended to the first string.
+Output Format:
+• Print the output in the following format:
+<appended_string>
+<reversed_string>
+Constraints:
+• The input strings may contain spaces.*/
+import java.util.Scanner;
+ 
+public class MutableStrings {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        StringBuffer buffer = new StringBuffer(s1);
+        buffer.append(s2);
+        System.out.println(buffer);
+        StringBuilder builder = new StringBuilder(buffer.toString());
+        builder.reverse();
+        System.out.println(builder);
+        sc.close();
+    }
+}
