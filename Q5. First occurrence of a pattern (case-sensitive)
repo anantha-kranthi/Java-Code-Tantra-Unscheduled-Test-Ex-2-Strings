@@ -1,0 +1,17 @@
+/*Q5. Write a Java program to find the first occurrence of a given pattern in a text. The matching should be case-sensitive.
+Input Format
+• The first line contains a string, representing the text.
+• The second line contains a string, representing the pattern to search for.
+Output Format
+• Print the 0-based index of the first occurrence of the pattern in the text if found, or — 1 if not found.*/
+import java.util.Scanner;
+ 
+public class PatternSearch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+        String pattern = sc.nextLine();
+        System.out.println(text.indexOf(pattern));   // returns -1 if not found
+        sc.close();
+    }
+}
