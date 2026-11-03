@@ -1,0 +1,35 @@
+/*Q21. Write a Java program that removes duplicate characters from a given string and forms a new string containing only distinct characters.
+If a character appears multiple times, keep only its first occurrence and remove all subsequent occurrences.
+
+The comparison of characters is case-sensitive. Therefore, uppercase and lowercase characters are considered different. For example, A and
+a are treated as two distinct characters.
+Input format:
+
+• The input contains a single line containing a string that may include alphabets, digits, spaces, or special characters.
+Output format:
+
+• Print the resulting string containing only the distinct characters, while preserving the original order of their first occurrences.
+Constraints:
+
+• The input string contains at least 1 character.
+
+• The input may contain uppercase and lowercase letters, digits, spaces, or special characters.
+
+• Character comparison is case-sensitive.
+*/
+import java.util.Scanner;
+ 
+public class DistinctChars {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (sb.indexOf(String.valueOf(c)) == -1) {   // keep only first occurrence
+                sb.append(c);
+            }
+        }
+        System.out.println(sb);
+        sc.close();
+    }
+}
