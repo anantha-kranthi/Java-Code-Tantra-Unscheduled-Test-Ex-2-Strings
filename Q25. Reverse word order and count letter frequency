@@ -1,0 +1,38 @@
+/*Q25. Write a Java program that takes a sentence as input and reverse the order of the words and count the frequency of each letter in the reversed
+string. The program should count the frequency of each letter (case-insensitive), ignoring non-alphabetic characters.
+Input Format:
+
+• The program should prompt the user to enter a string of words.
+Output Format:
+• First line displays the reversed words.
+• The next lines display the frequency of each letter in the reversed string in lexicographical order.
+Note: Refer to the visible testcases for better understanding of input and output formats.
+*/
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+ 
+public class ReverseWordsFrequency {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine().trim();
+        String[] words = s.split("\\s+");
+        StringBuilder rev = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            rev.append(words[i]);
+            if (i > 0) rev.append(" ");
+        }
+        System.out.println(rev);
+ 
+        Map<Character, Integer> freq = new TreeMap<>();   // sorted (lexicographic) order
+        for (char c : rev.toString().toLowerCase().toCharArray()) {
+            if (Character.isLetter(c)) {
+                freq.put(c, freq.getOrDefault(c, 0) + 1);
+            }
+        }
+        for (Map.Entry<Character, Integer> e : freq.entrySet()) {
+            System.out.println(e.getKey() + ": " + e.getValue());
+        }
+        sc.close();
+    }
+}
