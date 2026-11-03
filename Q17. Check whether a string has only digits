@@ -1,0 +1,26 @@
+/*Q17. In an examination, Dev is asked to check whether the string comprises only digits. If the string contains only digits, print “<String> has
+only digits”, else print “<String> doesn't have only digits”. Can you clear this exam by writing a Java program for it?
+Input format:
+• Asingle line containing a string str.
+Output format:
+• If the string contains only digits, print: "<str> has only digits" (where str is the input string).
+• If the string contains any non-digit character, print: "<str> doesn't have only digits".
+*/
+import java.util.Scanner;
+ 
+public class OnlyDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        boolean onlyDigits = !str.isEmpty();
+        for (char c : str.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                onlyDigits = false;
+                break;
+            }
+        }
+        if (onlyDigits) System.out.println(str + " has only digits");
+        else System.out.println(str + " doesn't have only digits");
+        sc.close();
+    }
+}
