@@ -1,0 +1,21 @@
+/*Q23. Kyathi has a string and wishes to simplify it by removing all the characters at odd indices. Help her by writing a Java program that removes
+all characters at odd indices (using 0-based indexing) and displays the resulting string.
+Input Format:
+
+• A single line reads a string.
+Output Format:
+• The output displays the string after removing all characters at odd indices.*/
+import java.util.Scanner;
+ 
+public class RemoveOddIndex {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i += 2) {   // keep even indices only
+            sb.append(s.charAt(i));
+        }
+        System.out.println(sb);
+        sc.close();
+    }
+}
