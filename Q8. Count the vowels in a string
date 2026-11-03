@@ -1,0 +1,22 @@
+/*Q8. Write a program to count the number of vowels in the given string. The vowels are ‘a’, 'e', 'i', 'o', 'u' (both uppercase and lowercase).
+Input Format:
+• A single line containing a string.
+Output Format:
+• Print the total number of vowels in the given string.
+Constraints:
+• The string will contain only alphabets.
+*/
+import java.util.Scanner;
+ 
+public class CountVowels {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int count = 0;
+        for (char c : s.toCharArray()) {
+            if ("aeiouAEIOU".indexOf(c) != -1) count++;
+        }
+        System.out.println(count);
+        sc.close();
+    }
+}
