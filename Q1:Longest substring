@@ -1,0 +1,44 @@
+/*Q1. Given a string, find the longest substring that contains no repeating characters and print both its length and the substring itself.
+A substring is a contiguous sequence of characters within a string. If a character appears more than once within a substring, that substring is
+not considered valid.
+If multiple substrings have the same maximum length, print the first substring that appears in the given string.
+The comparison of characters is case-sensitive. Therefore, uppercase and lowercase characters are considered different characters. For
+example, A and a are treated as distinct characters.
+Implement a method named findLongestSubstring() that takes the string as a parameter and returns the longest substring without repeating
+characters.
+Input Format:
+• The first line contains a string s.
+Output Format:
+• The first line prints the length of the longest substring without repeating characters.
+• The second line prints the longest substring itself.
+*/
+import java.util.Scanner;
+ 
+public class LongestSubstring {
+    // Returns the first longest substring that has no repeated characters
+    static String findLongestSubstring(String s) {
+        int[] last = new int[65536];          // last index (+1) where each char was seen
+        int start = 0, bestStart = 0, bestLen = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (last[c] > start) {
+                start = last[c];              // move window past the previous occurrence
+            }
+            last[c] = i + 1;
+            if (i - start + 1 > bestLen) {    // strictly greater -> keeps the first one
+                bestLen = i - start + 1;
+                bestStart = start;
+            }
+        }
+        return s.substring(bestStart, bestStart + bestLen);
+    }
+ 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.hasNextLine() ? sc.nextLine() : "";
+        String result = findLongestSubstring(s);
+        System.out.println(result.length());
+        System.out.println(result);
+        sc.close();
+    }
+}
