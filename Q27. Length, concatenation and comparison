@@ -1,0 +1,39 @@
+/*Q27. Write a Java program to perform basic string operations such as finding the length of a string, concatenating two strings, and comparing
+two strings.
+The program should:
+• Read two strings from the user.
+• Display the length of the first string.
+• Concatenate the two strings.
+• Compare the two strings using the equals () method and display whether they are equal.
+Input Format:
+• The first line contains a string representing the first string.
+• The second line contains a string representing the second string.
+Output Format:
+Display the results in the following format:
+<length>
+<concatenated_string>
+Equal
+or
+<length>
+<concatenated_string>
+Not Equal
+where:
+• <length> is the number of characters in the first string.
+• <concatenated_string> is the result of joining the first and second strings without any additional spaces.
+Constraints:
+• Both strings may contain alphabets, digits, and special characters.
+• Comparison is case-sensitive.
+*/
+import java.util.Scanner;
+ 
+public class StringOperations {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        System.out.println(s1.length());
+        System.out.println(s1.concat(s2));
+        System.out.println(s1.equals(s2) ? "Equal" : "Not Equal");
+        sc.close();
+    }
+}
