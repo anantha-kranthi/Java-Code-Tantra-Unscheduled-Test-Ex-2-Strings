@@ -1,0 +1,18 @@
+/*Q22. Elena received a message from her friend Eric. Eric requested Elena to return the same message but with all occurrences of the letter 'e'
+removed. Can you assist Elena in removing the letter 'e' and sending back the modified message by writing a Java program?
+Input format:
+
+• A single line containing a string.
+Output format:
+• A single line containing a string without the letter 'e' or 'E’.
+*/
+import java.util.Scanner;
+ 
+public class RemoveE {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(s.replace("e", "").replace("E", ""));
+        sc.close();
+    }
+}
