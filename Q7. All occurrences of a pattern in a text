@@ -1,0 +1,31 @@
+/*Q7. You are given two strings, a text and a pattern. Write a Java program to find all occurrences of the pattern within the text and display
+the starting indices (0-based) where the pattern is found.
+Input Format:
+• The first line contains the string text, which may contain spaces.
+• The second line contains the string pattern.
+Output Format:
+• Print all starting indices (0-based) in the text where the pattern occurs, separated by spaces.
+• If the pattern does not occur in the text, print "No Match".
+Constraints:
+• 1 ≤ |pattern| ≤ |text| ≤ 10^5
+Note:
+• The pattern matching is case sensitive (i.e. uppercase and lowercase letters are considered different).
+*/
+import java.util.Scanner;
+ 
+public class AllOccurrences {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+        String pattern = sc.nextLine();
+        StringBuilder sb = new StringBuilder();
+        int idx = text.indexOf(pattern);
+        while (idx != -1) {
+            if (sb.length() > 0) sb.append(" ");
+            sb.append(idx);
+            idx = text.indexOf(pattern, idx + 1);   // idx+1 allows overlapping matches
+        }
+        System.out.println(sb.length() == 0 ? "No Match" : sb.toString());
+        sc.close();
+    }
+}
