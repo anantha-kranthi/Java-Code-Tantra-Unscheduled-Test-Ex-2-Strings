@@ -1,0 +1,25 @@
+/*Q11. An English teacher assigns a task to students: given a string, they need to write the same string such that the first half of the letters are in
+lowercase and the second half of the letters are in uppercase.
+Write a Java program to implement this string transformation.
+Input Format:
+• A single line containing the input string.
+Output Format:
+• Asingle line containing the transformed string, where the first half of the string is in lowercase and the second half of the string is in
+uppercase.
+• Non-alphabetic characters in the string remain unchanged.
+Note:
+• For strings with an odd number of characters, the middle character should be included in the second half.
+• You can determine the midpoint using integer division.
+*/
+import java.util.Scanner;
+ 
+public class HalfCase {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        int mid = s.length() / 2;           // middle char (odd length) goes to second half
+        String result = s.substring(0, mid).toLowerCase() + s.substring(mid).toUpperCase();
+        System.out.println(result);
+        sc.close();
+    }
+}
