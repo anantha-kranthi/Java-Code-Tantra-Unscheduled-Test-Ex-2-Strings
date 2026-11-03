@@ -1,0 +1,22 @@
+/*Q10. Write a Java program that prompts the user to enter a string and a character. If the character is present in the string, print the index of the
+character; otherwise, print "Not found".
+Input Format:
+• The first line is a string of multiple characters (alphabets, digits, special characters).
+• The second line is a single character.
+Output Format:
+• If the character is present in the string, the output is the integer that represents the index of the character in the string; otherwise, it
+displays "Not found."
+Note: If the character occurs multiple times in the string, the index of its first occurrence should be printed.*/
+import java.util.Scanner;
+ 
+public class CharIndex {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        char ch = sc.nextLine().charAt(0);
+        int idx = s.indexOf(ch);           // first occurrence
+        if (idx != -1) System.out.println(idx);
+        else System.out.println("Not found");
+        sc.close();
+    }
+}
